@@ -1,0 +1,22 @@
+
+@import '../../../node_modules/@syncfusion/ej2-base/styles/material.css';  
+@import '../../../node_modules/@syncfusion/ej2-buttons/styles/material.css';  
+@import '../../../node_modules/@syncfusion/ej2-calendars/styles/material.css';  
+@import '../../../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';  
+@import '../../../node_modules/@syncfusion/ej2-inputs/styles/material.css';  
+@import '../../../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+@import '../../../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../../../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+@import "../../../node_modules/@syncfusion/ej2-react-grids/styles/material.css";
+
+.e-grid .e-headercelldiv{
+    font-size: 14px;
+    font-family: work-Sans, sans-serif;
+    font-weight: 500;
+}
+.e-grid .e-gridheader{
+    color:#414242;
+}
+.e-grid .e-rowcell:not(.e-editedbatchcell):not(.e-updatedtd),.e-pager,.e-pagercontainer,.e-pager .e-next.e-icons.e-icon-next.e-nextpage.e-pager-default,.e-pager .e-pagercontainer .e-lastpage{
+    color:#494949;
+}

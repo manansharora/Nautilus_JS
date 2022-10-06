@@ -1,0 +1,582 @@
+@import '../../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-calendars/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-inputs/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+@import "../../node_modules/@syncfusion/ej2-react-grids/styles/material.css";
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import '../../node_modules/@syncfusion/ej2-richtexteditor/styles/material.css';
+
+@import '../../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-react-navigations/styles/material.css';
+
+@import "../../node_modules/@syncfusion/ej2-base/styles/material.css";
+@import url("../assets/custom-stylesheet/sixstep_style.css");
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+}
+
+.signup-container {
+  box-shadow: 0 10px 45px -20px rgba(0, 0, 0, 0.8);
+  padding: 0 10px;
+  max-width: 450px;
+}
+
+.login-container {
+  box-shadow: 0 10px 45px -20px rgba(0, 0, 0, 0.8);
+  padding: 0 10px;
+  max-width: 400px;
+}
+
+.grid-chart-container {
+  padding: 15px 0px;
+}
+
+.grid_delete_row {
+  margin: 15px 0px;
+}
+
+.grid_container_btn {
+  margin: 15px 0px;
+}
+
+.chart_container_btn {
+  margin: 15px 0px;
+}
+
+.btn-save-chart {
+  margin-right: 20px;
+}
+
+.signup-card {
+  display: flex;
+  margin-top: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  display: flex;
+  margin-top: 10rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  margin-top: 3rem;
+}
+
+.lbl_design {
+  font-size: 14px;
+}
+
+.study-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0px;
+}
+
+.e-content .e-item {
+  font-size: 12px;
+  margin: 20px;
+  text-align: justify;
+}
+
+.save_saveas_btn {
+  padding: 0px 0px 15PX 0PX;
+}
+
+.mybtn {
+  background-color: #573DAC;
+  ;
+}
+
+.step-button {
+  margin-top: 1.7rem;
+}
+
+.pressure-drop {
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px 200px;
+  grid-gap: 0.5rem;
+}
+
+.pack-hold {
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px 200px;
+  grid-gap: 1.5rem;
+}
+
+/*------------ custom from anurag landing page table css --------------*/
+
+.text-box-disabled {
+  background-color: #573DAC;
+}
+
+.frm-cntr {
+  background-color: aqua;
+}
+
+.icon-position {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.e-content .e-item {
+  font-size: 14px
+}
+
+.e-tab .e-tab-header .e-toolbar-item .e-tab-wrap {
+  color: #000000
+}
+
+.tab-view {
+  margin-top: 7px;
+}
+
+.scrollbar {
+  height: 260px;
+  overflow-y: scroll;
+  display: block;
+}
+
+input[name="Injection_Speed"] {
+  background-color: #fff;
+}
+
+.back-conatainer {
+  padding: 20px 10px;
+  background-color: #DEE2E8;
+}
+
+.current-page-lable {
+  height: 40px;
+  background-color: #8590A0;
+  padding: 6px 15px;
+}
+
+.current-page-lable p {
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+}
+
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:landscape) {
+  .study-container {
+    padding: 30px 30px;
+    height: 1000px;
+    overflow-y: scroll;
+  }
+
+  .step-button {
+    margin-top: 1.7rem;
+  }
+
+  .cav_bal_add_delete_btn {
+    margin-left: 30px;
+  }
+
+  .hot_run_btns {
+    margin-left: 85px;
+    margin-top: 4px;
+  }
+
+  .hot_run_grid_btns {
+    margin-left: 30px;
+  }
+
+  .cold_run_grid_btns {
+    margin-left: 30px;
+  }
+
+  .cooling_time_all_btn {
+    margin-left: 30px;
+  }
+
+  .pack-hold {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-gap: 2rem;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:portrait) {
+  .study-container {
+    padding: 30px 30px;
+    height: 1000px;
+    overflow-y: scroll;
+  }
+
+  .step-button {
+    margin-top: 30px;
+  }
+
+  .pack-hold-import-data {
+    margin-top: 50px;
+  }
+
+  .step-button2 {
+    margin-top: 0px;
+  }
+
+  .pre-step-button2 {
+    margin-top: 45px;
+  }
+
+  .cav_bal_add_delete_btn {
+    margin-left: 30px;
+  }
+
+  .hot_run_btns {
+    margin-left: 85px;
+    margin-top: 4px;
+  }
+
+  .hot_run_grid_btns {
+    margin-left: 30px;
+  }
+
+  .cold_run_grid_btns {
+    margin-left: 30px;
+  }
+
+  .cooling_time_all_btn {
+    margin-left: 30px;
+  }
+
+  .pack-hold {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-gap: 2rem;
+  }
+
+}
+
+/* ***************** CAVITY_BALANCE_GRID_CSS ******************** */
+
+.Cavity-Grid-Container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.Cavity-Grid-1-Container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 74rem;
+}
+
+.Cavity-Grid-2-Container tr th {
+  width: 20%;
+}
+
+.table-heading-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+}
+
+.table-heading-content-editable {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 2px 5px;
+}
+
+.table-heading-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 20%;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+@media (min-height: 768px) and (max-height:1024px) {
+  .table-heading-icons {
+    font-size: 0.7rem;
+    width: 20%;
+  }
+
+  .table-heading-editable input {
+    width: 60%;
+    margin: 3px 2px;
+  }
+
+  .table-heading {
+    width: 80%;
+  }
+
+}
+
+.table-heading {
+  width: 70%;
+}
+
+.table-heading-editable {
+  width: 60%;
+}
+
+.table-heading input {
+  width: 40%;
+}
+
+.table-heading-editable input {
+  border: none;
+  outline: 0;
+}
+
+/* ******************* VISCOCITY CSS ******************* */
+.viscocity_icons {
+  font-size: 16px;
+  cursor: pointer;
+
+}
+
+.viscosity_table {
+  height: 300px;
+  overflow-y: scroll;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+}
+
+.viscosity-inputs {
+  width: 60%;
+}
+
+.viscosity-grid {
+  max-width: 90vw;
+  width: 80%;
+}
+
+.Viscosity_Showable_Chart{
+  display: none; 
+}
+
+/* ****************** Pressure Drop ********************** */
+
+.pressure-grid {
+  max-width: 90vw;
+  width: 60%;
+}
+
+/* *********************** Cold Runner *************** */
+.Cold-Grid-Container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.cold_table {
+  height: 350px;
+
+}
+
+.cold_table2 {
+  height: 450px;
+  overflow-x: scroll;
+}
+
+.cold-runner-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.cold-grid {
+  width: 35%;
+}
+
+.cold-chart {
+  width: 62%;
+}
+
+@media (min-height: 768px) and (max-height:1024px) {
+  .cold-runner-grid {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0;
+  }
+
+  .cold-grid {
+    width: 60%;
+    margin-bottom: 15px;
+  }
+
+  .cold-chart {
+    width: 100%;
+  }
+
+  .cold-heading {
+    width: 200px;
+  }
+
+  .cold_table2 {
+    height: 250px;
+    overflow-x: scroll;
+  }
+
+  .cold_table {
+    height: 250px;
+    overflow-x: scroll;
+  }
+
+  .lbl_design {
+    font-size: 13px;
+  }
+
+  .tab-view {
+    margin-top: 23px;
+  }
+
+  .btn-max-pre {
+    margin-top: 20px
+  }
+
+}
+
+/* ************** Cosmetic ***************** */
+.cosmetic-grid {
+  width: 500px;
+  margin-top: -20px;
+}
+
+/************************ Printable_Part ****************** */
+
+.Showable_Part {
+  display: none;
+}
+
+.Printable_Part table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+.Printable_Part {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Printable_Part .Input-Table {
+  margin: 20px 0;
+}
+
+.Printable_Part .Printable-Chart {
+  margin-top: 20px;
+}
+
+.Printable_Part .Printable-Grid {
+  margin: 20px;
+}
+
+.Printable_Part .Printable-Comment {
+  margin: 20px;
+  width: 80vw;
+}
+
+.Print {
+  margin: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ******************** CSS For Go to Sessions & Grid Header ************* */
+.session-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.session-link {
+  color: blue;
+  text-decoration: underline;
+}
+
+.e-grid .e-headercell,
+.e-grid .e-detailheadercell {
+  background-color: #4B5068;
+  border-color: #20e29f;
+  color: white;
+}
+
+.e-grid .e-headercelldiv {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/************* css for mold data *********************/
+
+.flex-row {
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Mold-Session {
+  font-weight: bold;
+}
+
+.mold_table {
+  padding: 5px 20px;
+}
+
+/* Bootstrap */
+.form-control {
+  padding: 2px;
+}
+
+.BreadCrum {
+
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0 5px;
+
+}
+
+.BreadCrum:hover {
+
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+
+}
+
+/* ***************** Header ******************** */
+.header-title {
+  position: relative;
+  left: 300px;
+  color: #fff;
+  font-size: 20px;
+  margin: 7px 10px;
+
+}
+
+.e-spinner-pane .e-spinner-inner .e-spin-material {
+  stroke: black;
+}

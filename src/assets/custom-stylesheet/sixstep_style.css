@@ -1,0 +1,15 @@
+  .e-tab .e-tab-header .e-toolbar-item.e-active .e-tab-text{
+      color: #1C17B7;      
+  }
+  .e-tab .e-tab-header .e-toolbar-item.e-active .e-tab-wrap:hover .e-tab-text{
+    color: #1C17B7;      
+}
+  .e-tab .e-tab-header .e-indicator{
+    background-color: #1C17B7;
+  }
+  .e-pager .e-currentitem, .e-pager .e-currentitem:hover{
+    background: #1C17B7;
+  }
+  .e-pager .e-currentitem{
+    background: #1C17B7;
+  }
