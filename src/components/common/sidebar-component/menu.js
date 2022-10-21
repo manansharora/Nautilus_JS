@@ -1,6 +1,7 @@
 import {
     Home,
-    FileText
+    FileText,
+    Percent
 } from 'react-feather';
 
 export const MENUITEMS = [
@@ -11,6 +12,6 @@ export const MENUITEMS = [
         path:'/dashboard/session/', title: 'Six Step Study', icon: FileText, type: 'link', badgeType: 'primary', active: false
     },
     {
-        path:'', title: 'Calculators', icon: FileText, type: 'link', badgeType: 'primary', active: false
+        path:'/dashboard/calculators/', title: 'Calculators', icon: Percent, type: 'link', badgeType: 'primary', active: false
     }
 ]

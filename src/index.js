@@ -19,6 +19,7 @@ import ResetPwd from './pages/resetPwd';
 import Activate from './pages/Activate'
 import ResetPwdConfirm from './pages/ResetPwdConfirm';
 import SessionGrid from './components/dashboard/SessionGrid';
+import CalculatorGrid from './components/dashboard/CalculatorGrid';
 
 import { registerLicense } from '@syncfusion/ej2-base';
 
@@ -58,6 +59,8 @@ const Root = ({ user }) => {
                             <Route exact path="/sixstepstudy/:moldId/:sessionId/:moldName/:sessionName/sixstepstudy" render={() => {
                                 return (sessionStorage.getItem('access') || user ? <SixStepStudy /> : <Redirect to="/login" />)
                             }}/>
+
+                            <Route path="/dashboard/calculators" component={CalculatorGrid} />
 
                         </App>
 
