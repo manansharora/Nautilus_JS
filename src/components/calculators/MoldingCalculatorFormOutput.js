@@ -1,54 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const MoldingCalculatorForm = ({addInput}) => {
-
-    const [moldingCalculationsInput, setMoldingCalculationsInput] = useState({
-        partVolume: "",
-        runnerVolume: "",
-        specificGravity: "",
-        projectedArea: "",
-        runnerProjectedArea: "",
-        numberOfRunners: "",
-        numberOfCavities: "",
-        averageCycleTime: "",
-        shotCapacity: "",
-        tonsPerInch: "",
-        screwDiameter: "",
-      });
-
-    const handleChange = (event) => {
-        setMoldingCalculationsInput({ ...moldingCalculationsInput, [event.target.name]: event.target.value });
-    };
-
-    const onSubmit = (event) => {
-        event.preventDefault();
-        addInput(moldingCalculationsInput);
-        console.log(moldingCalculationsInput);
-        alert('submitted');
-    };
-
+const MoldingCalculatorFormOutput = ({output}) => {
     return (
         <div>
         <Form>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Part Volume</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="screwDiameter" type="number" value={0} onChange={handleChange}/>
+                    <Form.Control name="screwDiameter" type="number" value={0} />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Runner Volume</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="shotWeight" type="number" value={0} onChange={handleChange}/>
+                    <Form.Control name="shotWeight" type="number" value={0} />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Specific Gravity</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="materialDensity" type="number" value={0} onChange={handleChange}/>
+                    <Form.Control name="materialDensity" type="number" value={0} />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
@@ -104,4 +79,4 @@ const MoldingCalculatorForm = ({addInput}) => {
     )
 }
 
-export default MoldingCalculatorForm
+export default MoldingCalculatorFormOutput

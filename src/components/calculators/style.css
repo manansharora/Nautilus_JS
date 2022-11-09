@@ -1,0 +1,15 @@
+.rowC{display:flex; flex-direction:row;}
+
+.nav-tabs .nav-link {
+    background-color: transparent !important;
+    color: #000000 !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+  
+  .nav-tabs .nav-link.active {
+    border-bottom: solid 4px white !important;
+    color: rgb(109, 109, 238) !important;
+    font-weight: bold;
+  }
