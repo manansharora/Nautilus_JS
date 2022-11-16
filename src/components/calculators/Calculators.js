@@ -7,8 +7,10 @@ import ShotSizeTable from './ShotSizeTable';
 import HopperSizeCalculator from './HopperSizeCalculator';
 import HopperSizeOutput from './HopperSizeOutput';
 import WaterTable from './waterFlowCalcs/WaterTable';
-import FlowType from './waterFlowCalcs/FlowType';
-import MinFlowRate from './waterFlowCalcs/MinFlowRate';
+import FlowTypeMetric from './waterFlowCalcs/FlowTypeMetric';
+import FlowTypeEnglish from './waterFlowCalcs/FlowTypeEnglish';
+import MinFlowRateEnglish from './waterFlowCalcs/MinFlowRateEnglish';
+import MinFlowRateMetric from './waterFlowCalcs/MinFlowRateMetric';
 import './style.css'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -18,11 +20,20 @@ import Tabs from 'react-bootstrap/Tabs';
 
 
 const Calculators = () => {
-    const [moldingCalculationsInput, setMoldingCalculationsInput] = useState([]);
+    const [moldingResult, setMoldingResult] = useState({
+        minSize: 0,
+        maxSize: 0,
+    });
 
+    const [hopperSizeResult, setHopperSizeResult] = useState({
+        minSize: 0,
+        maxSize: 0,
+    });
 
-    const addMoldingCalculatorInput = (formInput) => {
-        setMoldingCalculationsInput([...formInput, moldingCalculationsInput]);
+    const calculateHopperSizeResult = (hopperSizeData) => {
+        let minSizeCalc = (hopperSizeData.minDryingTime * 3600 * hopperSizeData.shotWeight) / hopperSizeData.cycleTime;
+        let maxSizeCalc = (hopperSizeData.maxDryingTime * 3600 * hopperSizeData.shotWeight) / hopperSizeData.cycleTime;
+        setHopperSizeResult({ minSize: minSizeCalc.toFixed(4), maxSize: maxSizeCalc.toFixed(4) });
     }
 
     // const onSubmit = (event) => {
@@ -52,7 +63,7 @@ const Calculators = () => {
                 </Row>
             </Container> */}
             <Tabs
-                defaultActiveKey="Water Flow Calculations"
+                defaultActiveKey="Molding Calculator"
                 className="mb-3"
                 fill
             >
@@ -84,10 +95,10 @@ const Calculators = () => {
                 <Container>
                     <Row>
                         <Col>
-                            <HopperSizeCalculator />
+                            <HopperSizeCalculator calculateResult={calculateHopperSizeResult} />
                         </Col>
                         <Col>
-                            <HopperSizeOutput />
+                            <HopperSizeOutput result={hopperSizeResult} />
                         </Col>
                     </Row>
                 </Container>
@@ -99,16 +110,16 @@ const Calculators = () => {
                 <Container>
                     <Row>
                         <Col>
-                            <FlowType />
+                            <FlowTypeEnglish />
                         </Col>
                         <Col>
-                            <MinFlowRate />
+                            <MinFlowRateEnglish />
                         </Col>
                         <Col>
-                            <FlowType />
+                            <FlowTypeMetric />
                         </Col>
                         <Col>
-                            <MinFlowRate />
+                            <MinFlowRateMetric />
                         </Col>
                     </Row>
                     <Row>

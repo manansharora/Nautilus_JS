@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
-import Button from 'react-bootstrap/Button';
+import React from 'react';
 import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const MoldingCalculatorFormOutput = ({output}) => {
@@ -9,67 +7,79 @@ const MoldingCalculatorFormOutput = ({output}) => {
         <div>
         <Form>
             <Form.Group className="mb-3" controlId="formBasicnumber">
-                <Form.Label>Part Volume</Form.Label>
+                <Form.Label>Part Weight</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="screwDiameter" type="number" value={0} />
+                    <Form.Control name="screwDiameter" type="number" value={0} disabled />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
-                <Form.Label>Runner Volume</Form.Label>
+                <Form.Label>Runner Weight</Form.Label>
                 <Col sm={10}>
                     <Form.Control name="shotWeight" type="number" value={0} />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
-                <Form.Label>Specific Gravity</Form.Label>
+                <Form.Label>Shot Weight</Form.Label>
                 <Col sm={10}>
                     <Form.Control name="materialDensity" type="number" value={0} />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
-                <Form.Label>Projected Area</Form.Label>
+                <Form.Label>Approximate Residence Time</Form.Label>
                 <Col sm={10}>
                     <Form.Control type="number" value={0} />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
-                <Form.Label>Runner Projected Area</Form.Label>
+                <Form.Label>% Usage of Barrel</Form.Label>
                 <Col sm={10}>
                     <Form.Control type="number" value={0} />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
-                <Form.Label>Number of Runners</Form.Label>
+                <Form.Label>Required Tonnage</Form.Label>
                 <Col sm={10}>
                     <Form.Control type="number" value={0} />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
-                <Form.Label>Number of Cavities</Form.Label>
+                <Form.Label>Parts per hour</Form.Label>
                 <Col sm={10}>
                     <Form.Control type="number" value={0} />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
-                <Form.Label>Average Cycle Time</Form.Label>
+                <Form.Label>Parts per 8 hours</Form.Label>
                 <Col sm={10}>
                     <Form.Control type="number" value={0} />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
-                <Form.Label>Shot Capacity</Form.Label>
+                <Form.Label>Parts per 24 hours</Form.Label>
                 <Col sm={10}>
                     <Form.Control type="number" value={0} />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
-                <Form.Label>Tons/Inch</Form.Label>
+                <Form.Label>Time to mold 100 parts</Form.Label>
                 <Col sm={10}>
                     <Form.Control type="number" value={0} />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
-                <Form.Label>Screw Diameter</Form.Label>
+                <Form.Label>Material required per hour</Form.Label>
+                <Col sm={10}>
+                    <Form.Control type="number" value={0} />
+                </Col>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicnumber">
+                <Form.Label>Material required per 8 hours</Form.Label>
+                <Col sm={10}>
+                    <Form.Control type="number" value={0} />
+                </Col>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicnumber">
+                <Form.Label>Material required per 24 hours</Form.Label>
                 <Col sm={10}>
                     <Form.Control type="number" value={0} />
                 </Col>

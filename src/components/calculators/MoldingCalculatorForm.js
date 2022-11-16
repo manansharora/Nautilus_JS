@@ -45,6 +45,7 @@ const MoldingCalculatorForm = ({addInput}) => {
                     <Form.Control name="shotWeight" type="number" value={0} onChange={handleChange}/>
                 </Col>
             </Form.Group>
+            <hr />
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Specific Gravity</Form.Label>
                 <Col sm={10}>

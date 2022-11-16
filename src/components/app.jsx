@@ -14,7 +14,7 @@ import { useIdleTimer } from 'react-idle-timer'
 const App = (props) => {
 
     // To remove the unwanted occured warnings and bugs in browser console
-    console.log = console.warn = console.error = () => { };
+    //console.log = console.warn = console.error = () => { };
 
     window.onerror = function (message, url, lineNumber) {
 

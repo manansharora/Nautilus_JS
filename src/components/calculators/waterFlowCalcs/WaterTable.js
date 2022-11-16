@@ -1,14 +1,11 @@
-import React, { useState } from 'react'
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import React from 'react'
 import Table from 'react-bootstrap/Table'
 
 const WaterTable = ({toDisplay}) => {
     if (toDisplay == 1)
         return (
             <>
-            <Table striped bordered='true'>
+            <Table striped bordered hover variant="light">
                                 <thead>
                                     <tr>
                                         <td>Water Temp</td>
@@ -87,7 +84,7 @@ const WaterTable = ({toDisplay}) => {
             </>
         )
     return (
-        <Table striped bordered='true'>
+        <Table striped bordered hover variant="light">
                             <thead>
                                 <tr>
                                     <td>Water Temp (deg C)</td>
