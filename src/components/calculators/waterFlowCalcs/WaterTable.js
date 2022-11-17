@@ -2,7 +2,7 @@ import React from 'react'
 import Table from 'react-bootstrap/Table'
 
 const WaterTable = ({toDisplay}) => {
-    if (toDisplay == 1)
+    if (toDisplay === 1)
         return (
             <>
             <Table striped bordered hover variant="light">
