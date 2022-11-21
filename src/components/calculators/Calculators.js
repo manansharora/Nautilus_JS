@@ -13,6 +13,7 @@ import FlowTypeMetric from "./waterFlowCalcs/FlowTypeMetric";
 import FlowTypeEnglish from "./waterFlowCalcs/FlowTypeEnglish";
 import MinFlowRateEnglish from "./waterFlowCalcs/MinFlowRateEnglish";
 import MinFlowRateMetric from "./waterFlowCalcs/MinFlowRateMetric";
+import ProcessTransfer from "./ProcessTransfer";
 import "./style.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -152,7 +153,9 @@ const Calculators = () => {
             </Row>
           </Container>
         </Tab>
-        <Tab eventKey="Process Transfer" title="Process Transfer"></Tab>
+        <Tab eventKey="Process Transfer" title="Process Transfer">
+            <ProcessTransfer />
+        </Tab>
       </Tabs>
     </>
   );
