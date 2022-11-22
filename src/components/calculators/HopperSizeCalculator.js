@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const HopperSizeCalculator = ({calculateResult}) => {
@@ -14,7 +13,12 @@ const HopperSizeCalculator = ({calculateResult}) => {
 
     useEffect(() => {  
         //if(Object.values(hopperSizeData).every(x => x > 0)) {
-        if(hopperSizeData.minDryingTime > 0 && hopperSizeData.maxDryingTime > 0 && hopperSizeData.shotWeight > 0 && hopperSizeData.cycleTime > 0) {
+        let flag = true;
+        for(let key in hopperSizeData) {
+            if(hopperSizeData[key] <= 0)
+                flag = false;
+        }
+        if(flag) {
             console.log(Object.values(hopperSizeData));
             console.log("yes")
             calculateResult(hopperSizeData);

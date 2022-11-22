@@ -23,14 +23,41 @@ import Tabs from "react-bootstrap/Tabs";
 
 const Calculators = () => {
   const [moldingResult, setMoldingResult] = useState({
-    minSize: 0,
-    maxSize: 0,
+    partWeight: 0,
+    runnerWeight: 0,
+    shotWeight: 0,
+    approximateResidenceTime: 0,
+    percentUsageOfBarrel: 0,
+    requiredTonnage: 0,
+    partsPerHour: 0,
+    partsPerEightHour: 0,
+    partsPerTwentyFourHour: 0,
+    moldTime: 0,
+    materialPerHour: 0,
+    materialPerEightHour: 0,
+    materialPerTwentyFourHour: 0,
   });
 
   const [hopperSizeResult, setHopperSizeResult] = useState({
     minSize: 0,
     maxSize: 0,
   });
+
+  const [processResult, setProcessResult] = useState({
+    shotSize: 0,
+    transferPosition: 0,
+    shotSizeTransfer: 0,
+    injectionPressure1: 0,
+    injectionPressure2: 0,
+    injectionPressure3: 0,
+    fillTime: 0,
+    caloInjSpeed: 0,
+    holdingPressure1: 0,
+    holdingPressure2: 0,
+    holdingPressure3: 0,
+    backPressure: 0,
+    screwRPM: 0,
+});
 
   const calculateHopperSizeResult = (hopperSizeData) => {
     let minSizeCalc =
@@ -42,6 +69,57 @@ const Calculators = () => {
     setHopperSizeResult({
       minSize: minSizeCalc.toFixed(4),
       maxSize: maxSizeCalc.toFixed(4),
+    });
+  };
+
+  const calculateMoldingCalculations = (moldingCalculationsInput) => {
+    let partWeightCalc = moldingCalculationsInput.partVolume * moldingCalculationsInput.specificGravity;
+    let runnerWeightCalc = moldingCalculationsInput.runnerVolume * moldingCalculationsInput.specificGravity;
+    let shotWeightCalc = ((partWeightCalc * moldingCalculationsInput.numberOfCavities) + (runnerWeightCalc * moldingCalculationsInput.numberOfRunners));
+    let approximateResidenceTimeCalc = (moldingCalculationsInput.shotCapacity / (shotWeightCalc * (moldingCalculationsInput.specificGravity / 1.06)) * moldingCalculationsInput.averageCycleTime);
+    let percentUsageOfBarrelCalc = (shotWeightCalc * ((moldingCalculationsInput.specificGravity / 1.06) / moldingCalculationsInput.shotCapacity) * 100);
+    let requiredTonnageCalc = ((moldingCalculationsInput.projectedArea * moldingCalculationsInput.numberOfCavities) + (moldingCalculationsInput.runnerProjectedArea * moldingCalculationsInput.numberOfRunners * moldingCalculationsInput.tonsPerInch));
+    let partsPerHourCalc = (3600 / moldingCalculationsInput.averageCycleTime);
+    let partsPerEightHourCalc = (3600 / moldingCalculationsInput.averageCycleTime) * 8;
+    let partsPerTwentyFourHourCalc = (3600 / moldingCalculationsInput.averageCycleTime) * 24;
+    let moldTimeCalc = ((100 / moldingCalculationsInput.numberOfCavities) * moldingCalculationsInput.averageCycleTime) / 60;
+    let materialPerHourCalc = ((3600 / moldingCalculationsInput.averageCycleTime) * shotWeightCalc);
+    let materialPerEightHourCalc = ((3600 / moldingCalculationsInput.averageCycleTime) * shotWeightCalc) * 8;
+    let materialPerTwentyFourHourCalc = ((3600 / moldingCalculationsInput.averageCycleTime) * shotWeightCalc) * 24;
+
+    setMoldingResult({
+      partWeight: partWeightCalc,
+      runnerWeight: runnerWeightCalc,
+      shotWeight: shotWeightCalc,
+      approximateResidenceTime: approximateResidenceTimeCalc,
+      percentUsageOfBarrel: percentUsageOfBarrelCalc,
+      requiredTonnage: requiredTonnageCalc,
+      partsPerHour: partsPerHourCalc,
+      partsPerEightHour: partsPerEightHourCalc,
+      partsPerTwentyFourHour: partsPerTwentyFourHourCalc,
+      moldTime: moldTimeCalc,
+      materialPerHour: materialPerHourCalc,
+      materialPerEightHour: materialPerEightHourCalc,
+      materialPerTwentyFourHour: materialPerTwentyFourHourCalc,
+    })
+  };
+
+  const calculateProcessResult = (processInput) => {
+    let shotSizeCalc = Math.pow((processInput.screwDiameter / processInput.screwDiameterTarget), 2) * processInput.shotSize;
+    let shotSizeTransferCalc = processInput.shotSize - processInput.transferPosition;
+    let intensificationRatioCalc = (processInput.intensificationRatio / processInput.intensificationRatioTarget); 
+    let screwRPMCalc = (processInput.screwDiameter / processInput.screwDiameterTarget) * processInput.screwRPM;
+    setProcessResult({
+        shotSize: shotSizeCalc,
+        shotSizeTransfer: shotSizeTransferCalc,
+        injectionPressure1: intensificationRatioCalc * processInput.injectionPressure1,
+        injectionPressure2: intensificationRatioCalc * processInput.injectionPressure2,
+        injectionPressure3: intensificationRatioCalc * processInput.injectionPressure3,
+        holdingPressure1: intensificationRatioCalc * processInput.holdingPressure1,
+        holdingPressure2: intensificationRatioCalc * processInput.holdingPressure2,
+        holdingPressure3: intensificationRatioCalc * processInput.holdingPressure3,
+        caloInjSpeed: shotSizeTransferCalc,
+        screwRPM: screwRPMCalc,
     });
   };
 
@@ -76,10 +154,10 @@ const Calculators = () => {
           <Container>
             <Row>
               <Col>
-                <MoldingCalculatorForm />
+                <MoldingCalculatorForm calculateResult={calculateMoldingCalculations} />
               </Col>
               <Col>
-                <MoldingCalculatorFormOutput />
+                <MoldingCalculatorFormOutput result={moldingResult} />
               </Col>
             </Row>
           </Container>
@@ -154,7 +232,7 @@ const Calculators = () => {
           </Container>
         </Tab>
         <Tab eventKey="Process Transfer" title="Process Transfer">
-            <ProcessTransfer />
+            <ProcessTransfer calculateResult={calculateProcessResult} result={processResult} />
         </Tab>
       </Tabs>
     </>
