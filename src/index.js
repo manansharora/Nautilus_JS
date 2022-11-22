@@ -20,6 +20,7 @@ import Activate from './pages/Activate'
 import ResetPwdConfirm from './pages/ResetPwdConfirm';
 import SessionGrid from './components/dashboard/SessionGrid';
 import CalculatorGrid from './components/dashboard/CalculatorGrid';
+import ConversionGrid from './components/dashboard/ConversionGrid';
 
 import { registerLicense } from '@syncfusion/ej2-base';
 
@@ -61,6 +62,8 @@ const Root = ({ user }) => {
                             }}/>
 
                             <Route path="/dashboard/calculators" component={CalculatorGrid} />
+
+                            <Route path="/dashboard/conversions" component={ConversionGrid} />
 
                         </App>
 

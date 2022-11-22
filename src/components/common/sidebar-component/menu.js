@@ -1,7 +1,8 @@
 import {
     Home,
     FileText,
-    Percent
+    Percent,
+    DivideSquare
 } from 'react-feather';
 
 export const MENUITEMS = [
@@ -13,5 +14,8 @@ export const MENUITEMS = [
     },
     {
         path:'/dashboard/calculators/', title: 'Calculators', icon: Percent, type: 'link', badgeType: 'primary', active: false
+    },
+    {
+        path:'/dashboard/conversions/', title: 'Conversions', icon: DivideSquare, type: 'link', badgeType: 'primary', active: false
     }
 ]

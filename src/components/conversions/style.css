@@ -1,0 +1,57 @@
+.convButton {
+  background: url("calculator-icon.png") no-repeat;
+  width: 2rem;
+  min-height: 2rem;
+  z-index: 10;
+  position: relative;
+}
+
+.conv-div {
+  border: 1px solid black;
+  display: inline-block;
+  height: 80%;
+  width: 60%;
+  margin: 5% 20%;
+  background: rgba(255, 255, 255, 0.41);
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  
+}
+
+.conv-form{
+  margin-left: 25%;
+
+}
+h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgb(10, 10, 70);
+  margin: 2rem;
+}
+
+input {
+  width: 40%;
+  margin: 1rem;
+  height: 2rem;
+}
+
+select {
+  height: 2rem;
+}
+
+button {
+  margin: 1rem;
+}
+.button-convert {
+  color: aliceblue;
+  background: rgb(10, 10, 70);
+}
+
+p {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: black;
+}
