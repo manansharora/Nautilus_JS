@@ -66,6 +66,9 @@ const Calculators = () => {
     partWeight: 0,
     totalRunnerWeight: 0,
     regrindAmount: 0,
+    runnerWeightPercent: 0,
+    singleCavityWeight: 0,
+    singleRunnerWeight: 0,
   });
 
   const calculateHopperSizeResult = (hopperSizeData) => {
@@ -119,16 +122,16 @@ const Calculators = () => {
     let intensificationRatioCalc = (processInput.intensificationRatio / processInput.intensificationRatioTarget); 
     let screwRPMCalc = (processInput.screwDiameter / processInput.screwDiameterTarget) * processInput.screwRPM;
     setProcessResult({
-        shotSize: shotSizeCalc,
+        shotSize: shotSizeCalc.toFixed(2),
         shotSizeTransfer: shotSizeTransferCalc,
-        injectionPressure1: intensificationRatioCalc * processInput.injectionPressure1,
-        injectionPressure2: intensificationRatioCalc * processInput.injectionPressure2,
-        injectionPressure3: intensificationRatioCalc * processInput.injectionPressure3,
-        holdingPressure1: intensificationRatioCalc * processInput.holdingPressure1,
-        holdingPressure2: intensificationRatioCalc * processInput.holdingPressure2,
-        holdingPressure3: intensificationRatioCalc * processInput.holdingPressure3,
-        caloInjSpeed: shotSizeTransferCalc,
-        screwRPM: screwRPMCalc,
+        injectionPressure1: (intensificationRatioCalc * processInput.injectionPressure1).toFixed(2),
+        injectionPressure2: (intensificationRatioCalc * processInput.injectionPressure2).toFixed(2),
+        injectionPressure3: (intensificationRatioCalc * processInput.injectionPressure3).toFixed(2),
+        holdingPressure1: (intensificationRatioCalc * processInput.holdingPressure1).toFixed(2),
+        holdingPressure2: (intensificationRatioCalc * processInput.holdingPressure2).toFixed(2),
+        holdingPressure3: (intensificationRatioCalc * processInput.holdingPressure3).toFixed(2),
+        caloInjSpeed: shotSizeTransferCalc.toFixed(2),
+        screwRPM: screwRPMCalc.toFixed(2),
     });
   };
 
@@ -149,15 +152,15 @@ const Calculators = () => {
     let totalRunnerWeightCalc = runnerWeightCalc * 100 / (cavityWeightCalc + runnerWeightCalc);
     let regrindAmountCalc = calculateRegrindAmount(totalRunnerWeightCalc, RegrindData.pass, RegrindData.gen);
     setRegrindResult({
-      cavityWeight: cavityWeightCalc,
-      runnerWeight: runnerWeightCalc,
-      totalShotWeight: cavityWeightCalc + runnerWeightCalc,
-      partWeight: partWeightCalc,
-      totalRunnerWeight: totalRunnerWeightCalc,
+      cavityWeight: cavityWeightCalc.toFixed(2),
+      runnerWeight: runnerWeightCalc.toFixed(2),
+      totalShotWeight: cavityWeightCalc + runnerWeightCalc.toFixed(2),
+      partWeight: partWeightCalc.toFixed(2),
+      totalRunnerWeight: totalRunnerWeightCalc.toFixed(2),
       regrindAmount: regrindAmountCalc.toFixed(2),
-      gen: RegrindData.gen,
-      pass: RegrindData.pass,
-      runnerWeightPercent: RegrindData.totalRunnerWeight,
+      runnerWeightPercent: totalRunnerWeightCalc,
+      singlePartWeight: RegrindData.singlePartWeight,
+      singleRunnerWeight: RegrindData.singleRunnerWeight
     });
   };
 
@@ -238,7 +241,7 @@ const Calculators = () => {
             </Row>
             <Row>
               <Col>
-                <RegrindOutputTables result={RegrindResult} />
+                <RegrindOutputTables result={RegrindResult} calculateRegrindAmount={calculateRegrindAmount} />
               </Col>
             </Row>
           </Container>

@@ -33,3 +33,8 @@
 li{
   margin: 1rem;
 }
+
+.table {
+  table-layout: fixed;
+  width: 100%;
+}

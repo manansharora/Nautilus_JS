@@ -40,19 +40,19 @@ const ShotSizeCalculator = () => {
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Screw Diameter (mm)</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="screwDiameter" type="number" value={shotSizeData.screwDiameter} onChange={handleChange}/>
+                    <Form.Control name="screwDiameter" type="number" value={shotSizeData.screwDiameter} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Shot Weight (gms)</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="shotWeight" type="number" value={shotSizeData.shotWeight} onChange={handleChange}/>
+                    <Form.Control name="shotWeight" type="number" value={shotSizeData.shotWeight} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Material Density (gms/cm^3)</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="materialDensity" type="number" value={shotSizeData.materialDensity} onChange={handleChange}/>
+                    <Form.Control name="materialDensity" type="number" value={shotSizeData.materialDensity} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">

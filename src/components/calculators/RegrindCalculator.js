@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
-const RegrindCalculator = ({ calculateResult , RegrindResult}) => {
+const RegrindCalculator = ({ calculateResult , RegrindResult }) => {
   const [RegrindData, setRegrindData] = useState({
     singlePartWeight: 0,
     cavities: 0,

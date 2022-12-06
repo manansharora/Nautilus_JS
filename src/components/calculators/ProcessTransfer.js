@@ -62,12 +62,12 @@ const ProcessTransfer = ({calculateResult, result}) => {
                     <td>Intensification Ratio (IR)</td>
                     <td>
                         <Form.Group className="thisform" controlId="formBasicnumber">
-                            <Form.Control name="intensificationRatio" type="number" value={processInput.intensificationRatio} onChange={handleChange} size='sm' />
+                            <Form.Control name="intensificationRatio" type="number" value={processInput.intensificationRatio} onChange={handleChange} size='sm' min="0" />
                         </Form.Group>
                     </td>
                     <td>
                         <Form.Group className="thisform" controlId="formBasicnumber">
-                            <Form.Control name="intensificationRatioTarget" type="number" value={processInput.intensificationRatioTarget} onChange={handleChange} size='sm' />
+                            <Form.Control name="intensificationRatioTarget" type="number" value={processInput.intensificationRatioTarget} onChange={handleChange} size='sm' min="0" />
                         </Form.Group>
                     </td>
                     <td>-----</td>
@@ -77,12 +77,12 @@ const ProcessTransfer = ({calculateResult, result}) => {
                     <td>Screw Diameter in mm</td>
                     <td>
                         <Form.Group className="thisform" controlId="formBasicnumber">
-                            <Form.Control name="screwDiameter" type="number" value={processInput.screwDiameter} onChange={handleChange} size='sm' />
+                            <Form.Control name="screwDiameter" type="number" value={processInput.screwDiameter} onChange={handleChange} size='sm' min="0" />
                         </Form.Group>
                     </td>
                     <td>
                         <Form.Group className="thisform" controlId="formBasicnumber">
-                            <Form.Control name="screwDiameterTarget" type="number" value={processInput.screwDiameterTarget} onChange={handleChange} size='sm' />
+                            <Form.Control name="screwDiameterTarget" type="number" value={processInput.screwDiameterTarget} onChange={handleChange} size='sm' min="0" />
                         </Form.Group>
                     </td>
                     <td>-----</td>
@@ -92,18 +92,18 @@ const ProcessTransfer = ({calculateResult, result}) => {
                     <td>Shot Size in inches</td>
                     <td>
                         <Form.Group className="thisform" controlId="formBasicnumber">
-                            <Form.Control name="shotSize" type="number" value={processInput.shotSize} onChange={handleChange} size='sm' />
+                            <Form.Control name="shotSize" type="number" value={processInput.shotSize} onChange={handleChange} size='sm' min="0" />
                         </Form.Group>
                     </td>
                     <td>{result.shotSize}</td>
-                    <td>{result.shotSize * 25.4} (mm)</td>
-                    <td>{result.shotSize * 25.4} (mm)</td>
+                    <td>{(result.shotSize * 25.4).toFixed(2)} (mm)</td>
+                    <td>{(result.shotSize * 25.4).toFixed(2)} (mm)</td>
                 </tr>
                 <tr>
                     <td>Transfer position</td>
                     <td>
                         <Form.Group className="thisform" controlId="formBasicnumber">
-                            <Form.Control name="transferPosition" type="number" value={processInput.transferPosition} onChange={handleChange} size='sm' />
+                            <Form.Control name="transferPosition" type="number" value={processInput.transferPosition} onChange={handleChange} size='sm' min="0" />
                         </Form.Group>
                     </td>
                     <td>-----</td>
@@ -125,36 +125,36 @@ const ProcessTransfer = ({calculateResult, result}) => {
                         </Form.Group>
                     </td>
                     <td>{result.injectionPressure1}</td>
-                    <td>{result.injectionPressure1 * 0.0690} (bar)</td>
-                    <td>{result.injectionPressure1 * 0.00690} (mPa)</td>
+                    <td>{(result.injectionPressure1 * 0.0690).toFixed(2)} (bar)</td>
+                    <td>{(result.injectionPressure1 * 0.00690).toFixed(2)} (mPa)</td>
                 </tr>
                 <tr>
                     <td>Injection Pressure 2 (psi)</td>
                     <td>
                         <Form.Group className="thisform" controlId="formBasicnumber">
-                        <Form.Control name="injectionPressure2" type="number" value={processInput.injectionPressure2} onChange={handleChange} size='sm' />
+                        <Form.Control name="injectionPressure2" type="number" value={processInput.injectionPressure2} onChange={handleChange} size='sm' min="0" />
                         </Form.Group>
                     </td>
                     <td>{result.injectionPressure2}</td>
-                    <td>{result.injectionPressure2 * 0.0690} (bar)</td>
-                    <td>{result.injectionPressure2 * 0.00690} (mPa)</td>
+                    <td>{(result.injectionPressure2 * 0.0690).toFixed(2)} (bar)</td>
+                    <td>{(result.injectionPressure2 * 0.00690).toFixed(2)} (mPa)</td>
                 </tr>
                 <tr>
                     <td>Injection Pressure 3 (psi)</td>
                     <td>
                         <Form.Group className="thisform" controlId="formBasicnumber">
-                        <Form.Control name="injectionPressure3" type="number" value={processInput.injectionPressure3} onChange={handleChange} size='sm' />
+                        <Form.Control name="injectionPressure3" type="number" value={processInput.injectionPressure3} onChange={handleChange} size='sm' min="0" />
                         </Form.Group>
                     </td>
                     <td>{result.injectionPressure3}</td>
-                    <td>{result.injectionPressure3 * 0.0690} (bar)</td>
-                    <td>{result.injectionPressure3 * 0.00690} (mPa)</td>
+                    <td>{(result.injectionPressure3 * 0.0690).toFixed(2)} (bar)</td>
+                    <td>{(result.injectionPressure3 * 0.00690).toFixed(2)} (mPa)</td>
                 </tr>
                 <tr>
                     <td>Fill Time (Sec) :</td>
                     <td>
                         <Form.Group className="thisform" controlId="formBasicnumber">
-                            <Form.Control name="fillTime" type="number" value={processInput.fillTime} onChange={handleChange} size='sm' />
+                            <Form.Control name="fillTime" type="number" value={processInput.fillTime} onChange={handleChange} size='sm' min="0" />
                         </Form.Group>
                     </td>
                     <td>-----</td>
@@ -172,40 +172,40 @@ const ProcessTransfer = ({calculateResult, result}) => {
                     <td>Holding Pressure 1 (psi)</td>
                     <td>
                         <Form.Group className="thisform" controlId="formBasicnumber">
-                            <Form.Control name="holdingPressure1" type="number" value={processInput.holdingPressure1} onChange={handleChange} size='sm' />
+                            <Form.Control name="holdingPressure1" type="number" value={processInput.holdingPressure1} onChange={handleChange} size='sm' min="0" />
                         </Form.Group>
                     </td>
                     <td>{result.holdingPressure1}</td>
-                    <td>{result.holdingPressure1 * 0.0690} (bar)</td>
-                    <td>{result.holdingPressure1 * 0.00690} (mPa)</td>
+                    <td>{(result.holdingPressure1 * 0.0690).toFixed(2)} (bar)</td>
+                    <td>{(result.holdingPressure1 * 0.00690).toFixed(2)} (mPa)</td>
                 </tr>
                 <tr>
                     <td>Holding Pressure 2 (psi)</td>
                     <td>
                         <Form.Group className="thisform" controlId="formBasicnumber">
-                            <Form.Control name="holdingPressure2" type="number" value={processInput.holdingPressure2} onChange={handleChange} size='sm' />
+                            <Form.Control name="holdingPressure2" type="number" value={processInput.holdingPressure2} onChange={handleChange} size='sm' min="0" />
                         </Form.Group>
                     </td>
                     <td>{result.holdingPressure2}</td>
-                    <td>{result.holdingPressure1 * 0.0690} (bar)</td>
-                    <td>{result.holdingPressure2 * 0.00690} (mPa)</td>
+                    <td>{(result.holdingPressure1 * 0.0690).toFixed(2)} (bar)</td>
+                    <td>{(result.holdingPressure2 * 0.00690).toFixed(2)} (mPa)</td>
                 </tr>
                 <tr>
                     <td>Holding Pressure 3 (psi)</td>
                     <td>
                         <Form.Group className="thisform" controlId="formBasicnumber">
-                            <Form.Control name="holdingPressure3" type="number" value={processInput.holdingPressure3} onChange={handleChange} size='sm' />
+                            <Form.Control name="holdingPressure3" type="number" value={processInput.holdingPressure3} onChange={handleChange} size='sm' min="0" />
                         </Form.Group>
                     </td>
                     <td>{result.holdingPressure3}</td>
-                    <td>{result.holdingPressure1 * 0.0690} (bar)</td>
-                    <td>{result.holdingPressure3 * 0.00690} (mPa)</td>
+                    <td>{(result.holdingPressure1 * 0.0690).toFixed(2)} (bar)</td>
+                    <td>{(result.holdingPressure3 * 0.00690).toFixed(2)} (mPa)</td>
                 </tr>
                 <tr>
                     <td>Back Pressure 1 (psi)</td>
                     <td>
                         <Form.Group className="thisform" controlId="formBasicnumber">
-                            <Form.Control name="backPressure" type="number" value={processInput.backPressure} onChange={handleChange} size='sm' />
+                            <Form.Control name="backPressure" type="number" value={processInput.backPressure} onChange={handleChange} size='sm' min="0" />
                         </Form.Group>
                     </td>
                     <td></td>
@@ -216,7 +216,7 @@ const ProcessTransfer = ({calculateResult, result}) => {
                     <td>Screw rpm</td>
                     <td>
                         <Form.Group className="thisform" controlId="formBasicnumber">
-                            <Form.Control name="screwRPM" type="number" value={processInput.screwRPM} onChange={handleChange} size='sm' />
+                            <Form.Control name="screwRPM" type="number" value={processInput.screwRPM} onChange={handleChange} size='sm' min="0" />
                         </Form.Group>
                     </td>
                     <td>{result.screwRPM}</td>

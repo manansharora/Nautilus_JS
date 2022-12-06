@@ -44,13 +44,13 @@ const MinFlowRateEnglish = () => {
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Pipe Diameter (inches)</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="pipeDiameter" type="number" value={waterFlowData.pipeDiameter} onChange={handleChange}/>
+                    <Form.Control name="pipeDiameter" type="number" value={waterFlowData.pipeDiameter} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Water Temperature (deg F)</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="waterTemperature" type="number" value={waterFlowData.waterTemperature} onChange={handleChange}/>
+                    <Form.Control name="waterTemperature" type="number" value={waterFlowData.waterTemperature} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">

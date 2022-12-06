@@ -41,7 +41,7 @@ const MoldingCalculatorForm = ({calculateResult}) => {
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Part Volume</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="partVolume" type="number" value={moldingCalculationsInput.partVolume} onChange={handleChange} min="1" required />
+                    <Form.Control name="partVolume" type="number" value={moldingCalculationsInput.partVolume} onChange={handleChange} min="0" required />
                     <Form.Text className="text-muted">
                         Must be greater than 0.
                     </Form.Text>
@@ -50,7 +50,7 @@ const MoldingCalculatorForm = ({calculateResult}) => {
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Runner Volume</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="runnerVolume" type="number" value={moldingCalculationsInput.runnerVolume} onChange={handleChange}/>
+                    <Form.Control name="runnerVolume" type="number" value={moldingCalculationsInput.runnerVolume} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <p>OR</p>
@@ -70,55 +70,55 @@ const MoldingCalculatorForm = ({calculateResult}) => {
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Specific Gravity</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="specificGravity" type="number" value={moldingCalculationsInput.specificGravity} onChange={handleChange}/>
+                    <Form.Control name="specificGravity" type="number" value={moldingCalculationsInput.specificGravity} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Projected Area</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="projectedArea" type="number" value={moldingCalculationsInput.projectedArea} onChange={handleChange} />
+                    <Form.Control name="projectedArea" type="number" value={moldingCalculationsInput.projectedArea} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Runner Projected Area</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="runnerProjectedArea" type="number" value={moldingCalculationsInput.runnerProjectedArea} onChange={handleChange} />
+                    <Form.Control name="runnerProjectedArea" type="number" value={moldingCalculationsInput.runnerProjectedArea} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Number of Runners</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="numberOfRunners" type="number" value={moldingCalculationsInput.numberOfRunners} onChange={handleChange} />
+                    <Form.Control name="numberOfRunners" type="number" value={moldingCalculationsInput.numberOfRunners} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Number of Cavities</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="numberOfCavities" type="number" value={moldingCalculationsInput.numberOfCavities} onChange={handleChange} />
+                    <Form.Control name="numberOfCavities" type="number" value={moldingCalculationsInput.numberOfCavities} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Average Cycle Time</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="averageCycleTime" type="number" value={moldingCalculationsInput.averageCycleTime} onChange={handleChange} />
+                    <Form.Control name="averageCycleTime" type="number" value={moldingCalculationsInput.averageCycleTime} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Shot Capacity</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="shotCapacity" type="number" value={moldingCalculationsInput.shotCapacity} onChange={handleChange} />
+                    <Form.Control name="shotCapacity" type="number" value={moldingCalculationsInput.shotCapacity} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Tons/Inch</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="tonsPerInch" type="number" value={moldingCalculationsInput.tonsPerInch} onChange={handleChange} />
+                    <Form.Control name="tonsPerInch" type="number" value={moldingCalculationsInput.tonsPerInch} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Screw Diameter</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="screwDiameter" type="number" value={moldingCalculationsInput.screwDiameter} onChange={handleChange} />
+                    <Form.Control name="screwDiameter" type="number" value={moldingCalculationsInput.screwDiameter} onChange={handleChange} min="0"/>
                 </Col>
             </Form.Group>
         </Form>

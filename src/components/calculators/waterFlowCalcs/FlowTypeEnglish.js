@@ -45,19 +45,19 @@ const FlowTypeEnglish = () => {
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Pipe Diameter (mm)</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="pipeDiameter" type="number" value={waterFlowData.pipeDiameter} onChange={handleChange}/>
+                    <Form.Control name="pipeDiameter" type="number" value={waterFlowData.pipeDiameter} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Water Temperature</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="waterTemperature" type="number" value={waterFlowData.waterTemperature} onChange={handleChange}/>
+                    <Form.Control name="waterTemperature" type="number" value={waterFlowData.waterTemperature} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Flow Rate</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="flowRate" type="number" value={waterFlowData.flowRate} onChange={handleChange}/>
+                    <Form.Control name="flowRate" type="number" value={waterFlowData.flowRate} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">

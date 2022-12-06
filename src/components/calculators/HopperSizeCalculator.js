@@ -35,25 +35,25 @@ const HopperSizeCalculator = ({calculateResult}) => {
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Drying Time Min (Hours)</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="minDryingTime" type="number" value={hopperSizeData.minDryingTime} onChange={handleChange}/>
+                    <Form.Control name="minDryingTime" type="number" value={hopperSizeData.minDryingTime} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Drying Time Max (Hours)</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="maxDryingTime" type="number" value={hopperSizeData.maxDryingTime} onChange={handleChange}/>
+                    <Form.Control name="maxDryingTime" type="number" value={hopperSizeData.maxDryingTime} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Shot Weight</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="shotWeight" type="number" value={hopperSizeData.shotWeight} onChange={handleChange}/>
+                    <Form.Control name="shotWeight" type="number" value={hopperSizeData.shotWeight} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Cycle Time (sec)</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="cycleTime" type="number" value={hopperSizeData.cycleTime} onChange={handleChange}/>
+                    <Form.Control name="cycleTime" type="number" value={hopperSizeData.cycleTime} onChange={handleChange} min="0" />
                 </Col>
             </Form.Group>
         </Form>
