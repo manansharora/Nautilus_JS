@@ -41,7 +41,10 @@ const MoldingCalculatorForm = ({calculateResult}) => {
             <Form.Group className="mb-3" controlId="formBasicnumber">
                 <Form.Label>Part Volume</Form.Label>
                 <Col sm={10}>
-                    <Form.Control name="partVolume" type="number" value={moldingCalculationsInput.partVolume} onChange={handleChange}/>
+                    <Form.Control name="partVolume" type="number" value={moldingCalculationsInput.partVolume} onChange={handleChange} min="1" required />
+                    <Form.Text className="text-muted">
+                        Must be greater than 0.
+                    </Form.Text>
                 </Col>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicnumber">

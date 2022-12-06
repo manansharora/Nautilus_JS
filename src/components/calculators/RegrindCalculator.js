@@ -4,45 +4,29 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
-const RegrindCalculator = () => {
+const RegrindCalculator = ({ calculateResult , RegrindResult}) => {
   const [RegrindData, setRegrindData] = useState({
     singlePartWeight: 0,
     cavities: 0,
     singleRunnerWeight: 0,
     runner: 0,
     pass: 0,
-    generation: 0,
-  });
-
-  const [RegrindResult, setRegrindResult] = useState({
-    cavityWeight: 0,
-    runnerWeight: 0,
-    totalShotWeight: 0,
-    partWeight: 0,
-    totalRunnerWeight: 0,
     gen: 0,
-    res: 0,
-    npass: 0,
   });
 
-  useEffect(() => {
-    calculateResult();
-  });
+  useEffect(() => {  
+    let flag = true;
+    for(let key in RegrindData) {
+        if(RegrindData[key] <= 0)
+            flag = false;
+    }
+    if(flag) {
+        calculateResult(RegrindData);
+    }
+}, [ RegrindData ]);
 
   const handleChange = (event) => {
-    //calculateResult();
-    setRegrindData({ ...RegrindData, [event.target.name]: event.target.value });
-  };
-
-  const calculateResult = () => {
-    // let sd = shotSizeData.screwDiameter
-    // let sw = shotSizeData.shotWeight
-    // let md = shotSizeData.materialDensity
-    // if(sd != 0 && sw != 0 && md != 0) {
-    //     console.log("exec");
-    //     let res = (sw * 1000) / (0.785 * md * sd * sw);
-    //     setShotSizeResult(res.toFixed(4));
-    // }
+    setRegrindData(prevState => ({ ...prevState, [event.target.name]: event.target.value }));
   };
 
   return (
@@ -133,8 +117,9 @@ const RegrindCalculator = () => {
                 <Form.Label>Total Shot Weight:</Form.Label>
                 <Col sm={10}>
                   <Form.Control
+                    name="totalShotWeight"
                     type="number"
-                    value={RegrindResult.totalRunnerWeight}
+                    value={RegrindResult.totalShotWeight}
                     readOnly
                   />
                 </Col>
@@ -185,9 +170,9 @@ const RegrindCalculator = () => {
                 <Form.Label>Enter Generation# (g):</Form.Label>
                 <Col sm={10}>
                   <Form.Control
-                    name="generation"
+                    name="gen"
                     type="number"
-                    value={RegrindData.generation}
+                    value={RegrindData.gen}
                     onChange={handleChange}
                   />
                 </Col>
@@ -198,8 +183,7 @@ const RegrindCalculator = () => {
       </Form>
 
       <p>
-        In the part,Amount of {RegrindResult.gen} generation regrind in{" "}
-        {RegrindResult.npass} number pass is {RegrindResult.res}
+        In the part,Amount of {RegrindData.gen} generation regrind in {RegrindData.pass} number pass is {RegrindResult.regrindAmount}
       </p>
     </div>
   );

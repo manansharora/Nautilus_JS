@@ -59,6 +59,15 @@ const Calculators = () => {
     screwRPM: 0,
 });
 
+  const [RegrindResult, setRegrindResult] = useState({
+    cavityWeight: 0,
+    runnerWeight: 0,
+    totalShotWeight: 0,
+    partWeight: 0,
+    totalRunnerWeight: 0,
+    regrindAmount: 0,
+  });
+
   const calculateHopperSizeResult = (hopperSizeData) => {
     let minSizeCalc =
       (hopperSizeData.minDryingTime * 3600 * hopperSizeData.shotWeight) /
@@ -120,6 +129,35 @@ const Calculators = () => {
         holdingPressure3: intensificationRatioCalc * processInput.holdingPressure3,
         caloInjSpeed: shotSizeTransferCalc,
         screwRPM: screwRPMCalc,
+    });
+  };
+
+  const calculateRegrindAmount = (x, pass, generation) => {
+    if(pass - generation < 1) 
+      return 0;
+    else if(pass - generation == 1) {
+      return (Math.pow(x / 100, generation) * 100);
+    }
+    
+    return (Math.pow(x / 100, generation) * (1 - x / 100) * 100)
+  };
+
+  const calculateRegrindResult = (RegrindData) => {
+    let cavityWeightCalc = RegrindData.singlePartWeight * RegrindData.cavities;
+    let runnerWeightCalc = RegrindData.singleRunnerWeight * RegrindData.runner;
+    let partWeightCalc = cavityWeightCalc * 100 / (cavityWeightCalc + runnerWeightCalc)
+    let totalRunnerWeightCalc = runnerWeightCalc * 100 / (cavityWeightCalc + runnerWeightCalc);
+    let regrindAmountCalc = calculateRegrindAmount(totalRunnerWeightCalc, RegrindData.pass, RegrindData.gen);
+    setRegrindResult({
+      cavityWeight: cavityWeightCalc,
+      runnerWeight: runnerWeightCalc,
+      totalShotWeight: cavityWeightCalc + runnerWeightCalc,
+      partWeight: partWeightCalc,
+      totalRunnerWeight: totalRunnerWeightCalc,
+      regrindAmount: regrindAmountCalc.toFixed(2),
+      gen: RegrindData.gen,
+      pass: RegrindData.pass,
+      runnerWeightPercent: RegrindData.totalRunnerWeight,
     });
   };
 
@@ -195,12 +233,12 @@ const Calculators = () => {
           <Container>
             <Row>
               <Col>
-                <RegrindCalculator />
+                <RegrindCalculator calculateResult={calculateRegrindResult} RegrindResult={RegrindResult} />
               </Col>
             </Row>
             <Row>
               <Col>
-                <RegrindOutputTables />
+                <RegrindOutputTables result={RegrindResult} />
               </Col>
             </Row>
           </Container>
