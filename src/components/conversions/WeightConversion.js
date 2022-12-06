@@ -71,6 +71,7 @@ const Weight = () => {
             <input
               name="inputValue"
               type="number"
+              className="input_style"
               value={inputValue}
               onChange={(e) => SetInputValue(e.target.value)}
             />
@@ -92,6 +93,7 @@ const Weight = () => {
             <input
               name="outputValue"
               type="number"
+              className="input_style"
               value={outputValue}
               disabled={true}
               onChange={(e) => SetOutputValue(e.target.value)}

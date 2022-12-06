@@ -52,6 +52,7 @@ const Pressure = () => {
           <div>
             <input
               name="inputValue"
+              className="input_style"
               type="number"
               value={inputValue}
               onChange={(e) => SetInputValue(e.target.value)}
@@ -73,6 +74,7 @@ const Pressure = () => {
           <div>
             <input
               name="outputValue"
+              className="input_style"
               type="number"
               value={outputValue}
               disabled={true}

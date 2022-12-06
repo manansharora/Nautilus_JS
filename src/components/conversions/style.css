@@ -22,8 +22,11 @@
 }
 
 .conv-form{
-  margin-left: 25%;
+  margin-left: 30%;
 
+}
+.conv-form-temp{
+  margin-left: 20%;
 }
 h4 {
   font-size: 1.2rem;
@@ -32,11 +35,11 @@ h4 {
   margin: 2rem;
 }
 
-/* input {
+ .input_style {
   width: 40%;
   margin: 1rem;
   height: 2rem;
-} */
+} 
 
 select {
   height: 2rem;

@@ -94,6 +94,7 @@ const Distance = () => {
           <div>
             
               <input
+                className="input_style"
                 name="inputValue"
                 type="number"
                 value={inputValue}
@@ -117,6 +118,7 @@ const Distance = () => {
           <div>
             
               <input
+                className="input_style"
                 name="outputValue"
                 type="number"
                 value={outputValue}

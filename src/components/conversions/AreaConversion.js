@@ -92,55 +92,56 @@ const Areas = () => {
 
         <form onSubmit={calcArea}>
           <div>
-            
-              <input
-                name="inputValue"
-                type="number"
-                value={inputValue}
-                onChange={(e) => SetInputValue(e.target.value)}
-              />
-              
-              <select
-                name="baseUnit"
-                value={baseUnit}
-                onChange={(e) => SetBaseUnit(e.target.value)}
-              >
-                {areas.map((tmp) => (
-                  <option key={tmp} value={tmp}>
-                    {tmp}
-                  </option>
-                ))}
-              </select>
-              
+            <input
+              className="input_style"
+              name="inputValue"
+              type="number"
+              value={inputValue}
+              onChange={(e) => SetInputValue(e.target.value)}
+            />
+
+            <select
+              name="baseUnit"
+              value={baseUnit}
+              onChange={(e) => SetBaseUnit(e.target.value)}
+            >
+              {areas.map((tmp) => (
+                <option key={tmp} value={tmp}>
+                  {tmp}
+                </option>
+              ))}
+            </select>
           </div>
 
           <div>
-            
-              <input
-                name="outputValue"
-                type="number"
-                value={outputValue}
-                disabled={true}
-                onChange={(e) => SetOutputValue(e.target.value)}
-              />
-              
-            
-              <select
-                name="resultUnit"
-                value={resultUnit}
-                onChange={(e) => SetResultUnit(e.target.value)}
-              >
-                {areas.map((tmp) => (
-                  <option key={tmp} value={tmp}>
-                    {tmp}
-                  </option>
-                ))}
-              </select>
-              
+            <input
+              className="input_style"
+              name="outputValue"
+              type="number"
+              value={outputValue}
+              disabled={true}
+              onChange={(e) => SetOutputValue(e.target.value)}
+            />
+
+            <select
+              name="resultUnit"
+              value={resultUnit}
+              onChange={(e) => SetResultUnit(e.target.value)}
+            >
+              {areas.map((tmp) => (
+                <option key={tmp} value={tmp}>
+                  {tmp}
+                </option>
+              ))}
+            </select>
           </div>
 
-          <button type="submit" className='btn button-convert'>Convert</button>
-          <button className='btn btn-outline' onClick={reload}>Reset</button>
+          <button type="submit" className="btn button-convert">
+            Convert
+          </button>
+          <button className="btn btn-outline" onClick={reload}>
+            Reset
+          </button>
         </form>
 
         <div>

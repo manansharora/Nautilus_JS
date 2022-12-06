@@ -97,6 +97,7 @@ const Volume = () => {
                 name="inputValue"
                 type="number"
                 value={inputValue}
+                className="input_style"
                 onChange={(e) => SetInputValue(e.target.value)}
               />
               
@@ -120,6 +121,7 @@ const Volume = () => {
                 name="outputValue"
                 type="number"
                 value={outputValue}
+                className="input_style"
                 disabled={true}
                 onChange={(e) => SetOutputValue(e.target.value)}
               />
